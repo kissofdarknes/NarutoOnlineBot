@@ -3,7 +3,7 @@
 ## About
 NarutoOnlineBot is a [Discord](https://discordapp.com/) bot for [Naruto Online](http://naruto.oasgames.com/en/).
 
-Please report bugs to me on Discord at: AisuRyuuko#9721
+Please report bugs to me on Discord at: ♠Mizal♠#7102
 
 ## Commands
 Prefix: !
@@ -24,9 +24,10 @@ Special thanks to the following individuals for their contributions to the proje
 - GG
 - Yamato
 - Tori
+- AisuRyuuko
 
 ## License
-[GPL-3.0](https://raw.githubusercontent.com/AisuRyuuko/NarutoOnlineBot/master/LICENSE)
+[GPL-3.0](https://github.com/kissofdarknes/NarutoOnlineBot/blob/master/LICENSE)
 
 ## Running the bot on your server
 

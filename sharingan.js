@@ -21,7 +21,7 @@ client.on("message", (message) => {
 
   // Help Command
   if (message.content.startsWith(config.prefix + "help")) {
-    message.channel.send("Commands available: \n!ninja <name> | !image <name> | !list1 | !list2 | !stats <name> | !filter <tag>")
+    message.channel.send("Commands available: \n!ninja <name> | !image <name> | !list1 | !list2 | !stats <name> | !filter <tag> | !suggestedteam <name>")
   }
 
   if (message.content.startsWith(config.prefix + "ninja")) {
@@ -106,7 +106,33 @@ client.on("message", (message) => {
             title: ninObj.szName,
             description: "Stat Growth: \n[Life|Atk|Def|Nin|Res]\n" + ninObj.szBasicAttr,
             "image": {
-              "url": "https://github.com/AisuRyuuko/NarutoOnlineBot/blob/master/Images/" + ninObj.iNid + "_image.png?raw=true",
+              "url": "https://github.com/kissofdarknes/NarutoOnlineBot/tree/master/Images" + ninObj.iNid + "_image.png?raw=true",
+            }
+          }
+        });
+    } catch (e) {
+      console.log(e)
+    }
+  }
+  
+  if (message.content.startsWith(config.prefix + "suggestedteams")) {
+    try {
+      let args = message.content.split(" ").slice(1);
+      let ninjaName = args[0];
+      ninObj = findNinja(ninjaName)
+
+      if (typeof ninObj == 'undefined')
+      {
+        message.channel.send("Sorry, I do not have information on " + ninjaName + ".\nThis command currently only supports EN ninjas.\nPlease use !list1 or !list2 for a list of supported ninjas.")
+        return;
+      }
+
+      message.channel.send({
+          "embed": {
+            title: ninObj.szName,
+            description: "Stat Growth: \n[Life|Atk|Def|Nin|Res]\n" + ninObj.szBasicAttr,
+            "image": {
+              "url": "https://github.com/kissofdarknes/NarutoOnlineBot/tree/master/Images" + ninObj.iNid + "_image.png?raw=true",
             }
           }
         });
